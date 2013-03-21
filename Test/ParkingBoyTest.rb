@@ -31,7 +31,6 @@ class ParkingLotTest < MiniTest::Unit::TestCase
 	def test_Park_Success_Given_ParkingLot_Avaliable
 	    @_sut.AddParkingLot(@_parkingLot_avaliable)
 		refute_nil @_sut.Park @_car
-		assert !@_sut.Parkable?
 	end
 	
 	def test_Park_Fail_Given_ParkingLot_Unavaliable
@@ -42,7 +41,6 @@ class ParkingLotTest < MiniTest::Unit::TestCase
 	def test_Unpark_Success_Given_Parking_Success
 	    @_sut.AddParkingLot(@_parkingLot_avaliable)
 		parkingTicket=@_sut.Park @_car
-		refute_nil parkingTicket
 		assert_equal @_car, @_sut.Unpark(parkingTicket)
 	end
 	

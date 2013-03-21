@@ -23,7 +23,7 @@ class ParkingLot
 	end
 	
 	def Unpark parking_ticket
-		raise ParkingException, "Fake ticket" if parking_ticket.nil? || (!parking_ticket.Valid? self)
+		raise ParkingException, "Fake ticket" if parking_ticket.nil? || (!ValidTicket? parking_ticket)
 		raise ParkingException, "No car avaliable" if @slot[parking_ticket.parkingSlot_id].nil?
 		
 		@avaliable_count += 1
@@ -39,6 +39,10 @@ class ParkingLot
 	
 	def Empty?
 		avaliable_count==total_count
+	end
+	
+	def ValidTicket? ticket
+		ticket.parkingLot_id==id && (ValidSlotId? ticket.parkingSlot_id)
 	end
 	
 	attr_reader:id

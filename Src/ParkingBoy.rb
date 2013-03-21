@@ -23,7 +23,7 @@ class ParkingBoy
 	end
 	
 	def Unpark ticket
-		@parkingLots.each {|parkingLot| if ticket.Valid? parkingLot then return parkingLot.Unpark ticket end}
+		@parkingLots.each {|parkingLot| if parkingLot.ValidTicket? ticket then return parkingLot.Unpark ticket end}
 		nil
 	end
 

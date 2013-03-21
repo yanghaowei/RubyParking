@@ -4,9 +4,6 @@ class ParkingTicket
 		@parkingSlot_id=parkingSlot_id
 	end
 	
-	def Valid? parkingLot
-		@parkingLot_id==parkingLot.id && (parkingLot.ValidSlotId? @parkingSlot_id)
-	end
-	
+	attr_reader:parkingLot_id
 	attr_reader:parkingSlot_id
 end
