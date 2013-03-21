@@ -46,11 +46,11 @@ class ParkingLotTest < MiniTest::Unit::TestCase
 		assert_equal @_car, @_sut.Unpark(parkingTicket)
 	end
 	
-	def test_Unpark_Success_Given_Nil_Ticket
+	def test_Unpark_Fail_Given_Nil_Ticket
 		assert_nil @_sut.Unpark nil
 	end
 	
-	def test_Unpark_Success_Given_Wrong_Ticket
+	def test_Unpark_Fail_Given_Wrong_Ticket
 		assert_nil @_sut.Unpark ParkingTicket.new("wrong_parkingLot_id", "wrong_parking_slot_id")
 	end
 	
