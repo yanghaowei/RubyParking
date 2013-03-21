@@ -5,15 +5,26 @@ require '../Src/ParkingException'
 class ParkingBoy
     
 	def initialize()
-		@parkinglots=Array.new
+		@parkingLots=Array.new
 	end
 	
 	def AddParkingLot(lot)
-		@parkinglots[@parkinglots.length]=lot
+		@parkingLots[@parkingLots.length]=lot
 	end
 	
 	def Parkable?
-		@parkinglots.length>0
+		@parkingLots.each {|parkingLot| if parkingLot.Parkable? then return true end}
+		false
+	end
+	
+	def Park car
+		@parkingLots.each {|parkingLot| if parkingLot.Parkable? then return parkingLot.Park car end}
+		nil
+	end
+	
+	def Unpark ticket
+		@parkingLots.each {|parkingLot| if ticket.Valid? parkingLot then return parkingLot.Unpark ticket end}
+		nil
 	end
 
 end
