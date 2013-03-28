@@ -2,7 +2,7 @@ require '../Src/ParkingBoy'
 require '../Src/ParkingException'
 require 'minitest/autorun'
 
-class ParkingLotTest < MiniTest::Unit::TestCase 
+class ParkingBoyTest < MiniTest::Unit::TestCase 
 
     def setup
 		@_sut = ParkingBoy.new

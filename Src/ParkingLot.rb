@@ -37,13 +37,10 @@ class ParkingLot
 		true
 	end
 	
-	def Empty?
-		avaliable_count==total_count
-	end
-	
 	def ValidTicket? ticket
-		ticket.parkingLot_id==id && (ValidSlotId? ticket.parkingSlot_id)
+		ticket.parkingLot_id==@id && (ValidSlotId? ticket.parkingSlot_id)
 	end
 	
 	attr_reader:id
+	attr_reader:avaliable_count
 end
