@@ -25,7 +25,7 @@ class SmartParkingBoyTest < MiniTest::Unit::TestCase
 	def test_park_successfully_On_first_lot_given_two_parkinglots_with_same_capacity
 	    @_sut.Park @_car_1
 		ticket = @_sut.Park @_car_2
-		@_parkingLot_2.ValidTicket? ticket
+		assert @_parkingLot_2.ValidTicket? ticket
 	end
 	
 end
